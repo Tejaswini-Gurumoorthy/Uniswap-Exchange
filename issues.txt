@@ -1,0 +1,7 @@
+1. If txn not being sent, lower the version of ethers
+2. Alchemy/Infura API can't "get" signers- use .connect instead of .getSigner().
+3. Do not run the createWallets file again, it will create 10 random wallets again.
+4. Native ETH cannot be exchanged directly. They need to be wrapped to match the ERC20 standards, and then can be exchanged. (when TokentoToken exchange method used)
+5. If eth not wrapped, use the method ethToToken.
+6. Always check if funds>= gasLimit*gasPrice + value.
+7. Don't enter gas price manually, calculate it using gasLimit, value and funds available. 
