@@ -5,3 +5,8 @@
 5. If eth not wrapped, use the method ethToToken.
 6. Always check if funds>= gasLimit*gasPrice + value.
 7. Don't enter gas price manually, calculate it using gasLimit, value and funds available. 
+8. Insufficient gas funds error because the swapping transaction was taking place before getting funded.
+
+Learnings:
+1. Don't run funding and swapping transactions in the same file while testing. If the swapping transaction fails and the funding one suceeds, unnecessary ether transfers take place.
+2. estimate the gas first by calling the .estimateGas function, and then use that value for the swapping transaction.
